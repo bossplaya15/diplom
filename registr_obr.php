@@ -17,7 +17,7 @@ if ($mysqli == false) {
     $mysqli->query("INSERT INTO `users`(`name`, `lastname`, `email`, `phone`) VALUES ('$name', '$lastname', '$email', '$phone')");
     print("ok");
     $rand = mt_rand(1, 18);
-    $message = $name . ", cпасибо за регистрацию в розыгрыше. Ваш номер - " . $rand .  "<br>" . "Перейдите по ссылке для участия в розыгрыше: http://caldeira.p-host.in/give.html";
-    mail("elena.ryskova@gmail.com", "Ваш счастливый номер", $message);
+    $message = $name . ", cпасибо за регистрацию в розыгрыше. Ваш номер - " . $rand . ". Перейдите по ссылке для участия в розыгрыше: http://caldeira.p-host.in/give.html";
+    mail($email, "Ваш счастливый номер", $message);
   }
 }
